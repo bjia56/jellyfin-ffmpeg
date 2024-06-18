@@ -14,6 +14,7 @@ ffbuild_dockerbuild() {
     git checkout "$SCRIPT_COMMIT"
 
     mkdir rkmpp_build
+    cd rkmpp_build
     cmake \
         -DENABLE_RKMPP=ON \
         -DCMAKE_INSTALL_PREFIX="$FFBUILD_PREFIX" \
