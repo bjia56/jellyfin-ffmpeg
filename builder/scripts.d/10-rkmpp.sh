@@ -16,11 +16,9 @@ ffbuild_dockerbuild() {
     mkdir rkmpp_build
     cd rkmpp_build
     cmake \
-        -DENABLE_RKMPP=ON \
         -DCMAKE_INSTALL_PREFIX="$FFBUILD_PREFIX" \
         -DCMAKE_BUILD_TYPE=Release \
-        -DENABLE_SHARED=OFF \
-        -DBUILD_TEST=OFF \
+        -DBUILD_SHARED_LIBS=OFF \
         ..
 
     make -j$(nproc)
