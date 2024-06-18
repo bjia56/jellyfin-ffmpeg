@@ -4,7 +4,7 @@ SCRIPT_REPO="https://github.com/nyanmisaka/mpp.git"
 SCRIPT_COMMIT="jellyfin-mpp"
 
 ffbuild_enabled() {
-    [[ $TARGET == linux* ]] && [[ $TARGET == *arm64 ]] && return -
+    [[ $TARGET == linux* ]] && [[ $TARGET == *arm64 ]] && return 0
     return -1
 }
 
