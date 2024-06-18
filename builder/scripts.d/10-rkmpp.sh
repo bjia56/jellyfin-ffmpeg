@@ -23,6 +23,7 @@ ffbuild_dockerbuild() {
 
     make -j$(nproc)
     make install
+    cat /opt/ffbuild/lib/pkgconfig/rockchip_mpp.pc
 }
 
 ffbuild_configure() {
