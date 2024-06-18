@@ -73,7 +73,7 @@ cat <<EOF >"$BUILD_SCRIPT"
         --extra-ldflags='$FF_LDFLAGS' \
         --extra-ldexeflags='$FF_LDEXEFLAGS' \
         --extra-libs='$FF_LIBS' \
-        $FF_CONFIGURE
+        $FF_CONFIGURE || cat ffbuild/config.log
     make -j\$(nproc) V=1
     make install
 EOF
