@@ -23,6 +23,8 @@ ffbuild_dockerbuild() {
 
     make -j$(nproc)
     make install
+
+    echo "Libs.private: -lstdc++" >> "$FFBUILD_PREFIX"/lib/pkgconfig/rockchip_mpp.pc
     cat /opt/ffbuild/lib/pkgconfig/rockchip_mpp.pc
 }
 
