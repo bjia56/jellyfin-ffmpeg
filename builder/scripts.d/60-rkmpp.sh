@@ -1,17 +1,26 @@
 #!/bin/bash
 
-SCRIPT_REPO="https://github.com/bjia56/mpp.git"
-SCRIPT_COMMIT="jellyfin-mpp"
+SCRIPT_REPO="https://github.com/nyanmisaka/mpp.git"
+SCRIPT_COMMIT="2218dc0fc57062c0d33d06d350aea73d9fef5d57"
 
 ffbuild_enabled() {
     [[ $TARGET == linux* ]] && [[ $TARGET == *arm64 ]] && return 0
     return -1
 }
 
+ffbuild_dockerstage() {
+    to_df "RUN --mount=src=${SELF},dst=/stage.sh --mount=src=patches/rkmpp,dst=/patches run_stage /stage.sh"
+}
+
 ffbuild_dockerbuild() {
     git clone "$SCRIPT_REPO" mpp
     cd mpp
     git checkout "$SCRIPT_COMMIT"
+
+    for patch in /patches/*.patch; do
+        echo "Applying $patch"
+        patch -p1 < "$patch"
+    done
 
     mkdir rkmpp_build
     cd rkmpp_build
@@ -25,7 +34,6 @@ ffbuild_dockerbuild() {
     make install
 
     echo "Libs.private: -lstdc++" >> "$FFBUILD_PREFIX"/lib/pkgconfig/rockchip_mpp.pc
-    cat /opt/ffbuild/lib/pkgconfig/rockchip_mpp.pc
 }
 
 ffbuild_configure() {
