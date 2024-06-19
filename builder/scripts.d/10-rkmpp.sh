@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCRIPT_REPO="https://github.com/nyanmisaka/mpp.git"
+SCRIPT_REPO="https://github.com/bjia56/mpp.git"
 SCRIPT_COMMIT="jellyfin-mpp"
 
 ffbuild_enabled() {
