@@ -16,6 +16,7 @@ ffbuild_dockerbuild() {
     git clone "$SCRIPT_REPO" rkrga
     cd rkrga
     git checkout "$SCRIPT_COMMIT"
+    cd ..
 
     meson setup rkrga rkrga_build \
         --cross-file=/cross.meson \
