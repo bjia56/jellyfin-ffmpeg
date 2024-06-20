@@ -39,7 +39,3 @@ ffbuild_configure() {
 ffbuild_unconfigure() {
     echo --disable-rkrga
 }
-
-ffbuild_ldflags() {
-    echo "-lstdc++"
-}
