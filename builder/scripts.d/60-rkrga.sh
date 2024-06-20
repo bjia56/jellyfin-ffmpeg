@@ -30,10 +30,6 @@ ffbuild_dockerbuild() {
 
     meson configure rkrga_build
     ninja -C rkrga_build install
-    
-    echo "Libs.private: -lstdc++" >> "$FFBUILD_PREFIX"/lib/pkgconfig/librga.pc
-    ls "$FFBUILD_PREFIX"/lib/pkgconfig/
-    cat "$FFBUILD_PREFIX"/lib/pkgconfig/*.pc
 }
 
 ffbuild_configure() {
@@ -42,4 +38,8 @@ ffbuild_configure() {
 
 ffbuild_unconfigure() {
     echo --disable-rkrga
+}
+
+ffbuild_ldflags() {
+    echo "-lstdc++"
 }
