@@ -1,7 +1,8 @@
 #!/bin/bash
 
-SCRIPT_REPO="https://github.com/nyanmisaka/rk-mirrors.git"
-SCRIPT_COMMIT="a9fc19e6b906d7cecd6bcefbd45e5e151831d33f"
+SCRIPT_REPO="https://github.com/bjia56/rk-mirrors.git"
+SCRIPT_COMMIT="jellyfin-rga-1"
+#"a9fc19e6b906d7cecd6bcefbd45e5e151831d33f"
 
 ffbuild_enabled() {
     [[ $TARGET == linux* ]] && [[ $TARGET == *arm64 ]] && return 0
