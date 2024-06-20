@@ -32,6 +32,8 @@ ffbuild_dockerbuild() {
     ninja -C rkrga_build install
     
     echo "Libs.private: -lstdc++" >> "$FFBUILD_PREFIX"/lib/pkgconfig/librga.pc
+    ls "$FFBUILD_PREFIX"/lib/pkgconfig/
+    cat "$FFBUILD_PREFIX"/lib/pkgconfig/*.pc
 }
 
 ffbuild_configure() {
