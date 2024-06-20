@@ -30,6 +30,8 @@ ffbuild_dockerbuild() {
 
     meson configure rkrga_build
     ninja -C rkrga_build install
+    
+    echo "Libs.private: -lstdc++" >> "$FFBUILD_PREFIX"/lib/pkgconfig/rga.pc
 }
 
 ffbuild_configure() {
