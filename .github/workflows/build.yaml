@@ -17,11 +17,8 @@ on:
     paths-ignore:
       - '**/*.md'
 
-  workflow_dispatch:
-
 jobs:
   build_debian:
-    if: false
     uses: ./.github/workflows/_meta.yaml
     with:
       distro: 'debian'
@@ -30,7 +27,6 @@ jobs:
       release: false
 
   build_ubuntu:
-    if: false
     uses: ./.github/workflows/_meta.yaml
     with:
       distro: 'ubuntu'
@@ -39,7 +35,6 @@ jobs:
       release: false
 
   build_portable_windows:
-    if: false
     uses: ./.github/workflows/_meta_portable.yaml
     with:
       os: 'windows'
@@ -50,11 +45,10 @@ jobs:
     uses: ./.github/workflows/_meta_portable.yaml
     with:
       os: 'linux'
-      architectures: '["arm64"]' #'["amd64", "arm64"]'
+      architectures: '["amd64", "arm64"]'
       release: false
 
   build_portable_mac:
-    if: false
     uses: ./.github/workflows/_meta_mac_portable.yaml
     with:
       release: false
