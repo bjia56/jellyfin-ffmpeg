@@ -5,4 +5,4 @@ FF_LDFLAGS=""
 GIT_BRANCH="jellyfin"
 LICENSE_FILE="COPYING.GPLv3"
 
-[[ $TARGET == linux* ]] && FF_CONFIGURE+=" --disable-libxcb --disable-xlib" || true
+#[[ $TARGET == linux* ]] && FF_CONFIGURE+=" --disable-libxcb --disable-xlib" || true
